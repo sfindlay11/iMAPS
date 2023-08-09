@@ -1,3 +1,4 @@
+# expected demo output
 category	observed_singletons	expected_singletons	n_variants	imaps
 lost	1008	895.123563900441	1655	0.0682032846523012
 pres	867	834.594263390653	1637	0.0197958073361924
