@@ -13,7 +13,8 @@ gsutil v 5.25
 
 ```bash
 
-# download required files
+# download all required files into a single directory:
+
 # from Google Cloud:
 gsutil cp gs://imaps/gnomad_vars_annotated.bed .
 gsutil cp gs://imaps/intergenic_calibration_data.txt.gz .
@@ -61,8 +62,8 @@ Rscript path/to/imaps_calc.R path/to/demo_vars.bed [allele format] path/to/requi
 # 2) chromStart
 # 3) chromEnd
 # 4) name = categorical variable on which to calculate iMAPS (e.g. "test" & "control"). If no comparison is desired, provide any string as a placeholder
-# 5) score (optional) = "reference_allele|alternative_allele"
-# 6) strand (optional)
+# 5) score (optional; see below) = "reference_allele|alternative_allele"
+# 6) strand (optional; see below)
 
 # use allele format "none" and provide a four column .bed file if genomic ranges are provided with no variant alleles
 # use allele format "sense" and provide a six column .bed file with reference and alternative alleles corresponding to the sense strand in the 5th "score" column, separated by "|" (e.g. "A|C"). Provide the strand in column six.
