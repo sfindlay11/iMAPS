@@ -1,6 +1,6 @@
-# iMAPS
+# iMAPS calculator
 
-Quantify negative selection for 3' UTR variants or regions of interest using our iMAPS approach described in Findlay et al. 2023: "Quantifying negative selection in human 3ʹ UTRs uncovers constrained targets of RNA-binding proteins"
+Quantify negative selection for 3' UTR variants or regions of interest using the iMAPS approach described in Findlay et al. 2023: "Quantifying negative selection in human 3ʹ UTRs uncovers constrained targets of RNA-binding proteins"
 
 ## System requirements
 
@@ -14,9 +14,13 @@ gsutil v 5.25
 ```bash
 
 # download required files
+# from Google Cloud:
 gsutil cp gs://imaps/gnomad_vars_annotated.bed .
 gsutil cp gs://imaps/intergenic_calibration_data.txt.gz .
 gsutil cp gs://imaps/demo_vars.bed .
+
+# from this repository:
+feature_intersection.sh
 
 ```
 
@@ -36,9 +40,9 @@ imaps.by_category.DATA.txt
 
 ```bash
 
-# provide imaps_calc.R with:
+# provide imaps_calc.R followed by:
 # 1) variant.bed file
-# 2) the allele format used in for .bed file ("sense", "plus", or "none")
+# 2) the allele format used in the .bed file ("sense", "plus", or "none")
 # 3) a directory containing data (will also be used for output)
 
 Rscript path/to/imaps_calc.R path/to/demo_vars.bed [allele format] path/to/required_files/ 
