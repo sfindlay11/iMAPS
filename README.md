@@ -22,6 +22,9 @@ gsutil cp gs://imaps/demo_vars.bed .
 # from this repository:
 feature_intersection.sh
 
+# file permissions for feature_intersection.sh may need to be updated using
+chmod 777 feature_intersection.sh
+
 ```
 
 ## Demo

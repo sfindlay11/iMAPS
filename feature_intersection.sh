@@ -1,6 +1,8 @@
 # intersects 3'UTR gnomAD variants with demo / user provided variants or regions
 
-if [ $2 == "sense" ];
+echo "running intersection for $1"
+
+if [ "$2" = "sense" ];
 then
 
   # strands must match for intersection
@@ -8,7 +10,7 @@ then
   awk '{ if($7 != ".") { print }}' features_intersected.txt > features_intersected.filtered.txt
   awk -v OFS='\t' '{print $1, $2, $3, $4, $5, $6, $10, $11}' features_intersected.filtered.txt > features_intersected.filtered.sel_cols.txt
 
-elif [ $2 == "plus" ];
+elif [ "$2" = "plus" ];
 then
 
   # no requirement for strand matching
@@ -16,7 +18,7 @@ then
   awk '{ if($7 != ".") { print }}' features_intersected.txt > features_intersected.filtered.txt
   awk -v OFS='\t' '{print $1, $2, $3, $4, $5, $6, $10, $11}' features_intersected.filtered.txt > features_intersected.filtered.sel_cols.txt
 
-elif [ $2 == "none" ];
+elif [ "$2" = "none" ];
 then
 
   # no requirement for strand matching
