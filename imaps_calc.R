@@ -10,7 +10,7 @@ if (length(user_in) != 3) {
 }
 
 # required packages
-packages <- c("data.table", "stringi", "ggplot2", "RColorBrewer")
+packages <- c("data.table", "stringi", "ggplot2", "RColorBrewer", "R.utils")
 
 #install all required packages that are not already installed
 install.packages(setdiff(packages, rownames(installed.packages())))
@@ -20,6 +20,7 @@ library(data.table)
 library(stringi)
 library(ggplot2)
 library(RColorBrewer)
+library(R.utils)
 
 names_BED_std <- c("chrom", "chromStart", "chromEnd", "name", "score", "strand")
 
