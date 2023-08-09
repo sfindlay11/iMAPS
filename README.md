@@ -5,9 +5,11 @@ Quantify negative selection for 3' UTR variants or regions of interest using our
 ## System requirements
 
 Tested on:
-R version 4.2.0 
-bedtools v2.29.1 
-gsutil v 5.25 
+R version 4.2.0  
+
+bedtools v2.29.1  
+
+gsutil v 5.25  
 
 ## Installation guide
 
