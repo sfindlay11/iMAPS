@@ -8,10 +8,10 @@ library(parallel)
 library(EnvStats)
 
 # set paths
-path_data_in <- "~/Burge_lab_local/downloaded_data/ENCODE/eCLIP/"
-path_data_out <- "~/_/R_projects/ENCODE_eCLIP/data_files"
-path_data_regions <- "~/_/R_projects/ENCODE_eCLIP/data_files"
-path_data_genes <- "~/_/Burge_lab/data/hg38/"
+path_data_in <- ""
+path_data_out <- ""
+path_data_regions <- ""
+path_data_genes <- ""
 
 # set main values
 names_BED_std <- c("chrom", "chromStart", "chromEnd", "name", "score", "strand")

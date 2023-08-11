@@ -3,15 +3,22 @@
 Quantify negative selection for 3' UTR variants or regions of interest using the iMAPS approach described in Findlay et al. 2023: "Quantifying negative selection in human 3ʹ UTRs uncovers constrained targets of RNA-binding proteins"
 
 ## System requirements
-
-Tested on:   
-R version 4.2.0  
+  
+R v4.2.0  
 bedtools v2.29.1  
 gsutil v 5.25  
+
+Tested on:  
+Mac OS 10.15.7  
+Mac OS 13.4  
+Ubuntu 20.04  
 
 ## Installation guide
 
 ```bash
+
+# clone the repo
+git clone https://github.com/sfindlay11/iMAPS.git
 
 # download all required files into a single directory:
 
@@ -33,7 +40,7 @@ chmod 777 feature_intersection.sh
 ```bash
 
 # run a demo calculating negative selection (iMAPS) for variants disrupting or preserving ReP sites with relative affinities >= 0.1
-Rscript path/to/imaps_calc.R path/to/demo_vars.bed sense path/to/required_files/
+Rscript /path/to/imaps_calc.R /path/to/demo_vars.bed sense /path/to/required_files/
 
 # expected output (approximate run time of 3 minutes):
 imaps.by_category.DATA.txt
@@ -44,12 +51,9 @@ imaps.by_category.DATA.txt
 
 ```bash
 
-# provide imaps_calc.R followed by:
-# 1) variant.bed file
-# 2) the allele format used in the .bed file ("sense", "plus", or "none")
-# 3) a directory containing data (will also be used for output)
+Rscript /path/to/imaps_calc.R /path/to/demo_vars.bed [allele format] /path/to/required_files/ 
 
-Rscript path/to/imaps_calc.R path/to/demo_vars.bed [allele format] path/to/required_files/ 
+# allele fromat: "none", "sense", or "plus"; see below
 
 # .bed format requirements:
 # tab-separated values
@@ -65,9 +69,16 @@ Rscript path/to/imaps_calc.R path/to/demo_vars.bed [allele format] path/to/requi
 # 5) score (optional; see below) = "reference_allele|alternative_allele"
 # 6) strand (optional; see below)
 
+
+# if providing features / genomic ranges of interest:
 # use allele format "none" and provide a four column .bed file if genomic ranges are provided with no variant alleles
+
+# if providing variants:
 # use allele format "sense" and provide a six column .bed file with reference and alternative alleles corresponding to the sense strand in the 5th "score" column, separated by "|" (e.g. "A|C"). Provide the strand in column six.
+# OR
 # use allele format "plus" and provide a five column .bed file  with reference and alternative alleles corresponding to the plus strand in the 5th "score" column, separated by "|" (e.g. "A|C").
+
+# ** CAUTION should be exercised when analyzing variants where the allele frequency spectrum may influence variant ascertainment or classification. As one example, significant GWAS and QTL variants generally have relatively high allele frequencies as these analyses are not typically powered to detect effects from lower freuency variants. Such sets of variants may not produce interpretable iMAPS results. **
 
 ```
 
