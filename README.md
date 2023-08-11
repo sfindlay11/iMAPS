@@ -26,7 +26,6 @@ git clone https://github.com/sfindlay11/iMAPS.git
 gsutil cp gs://imaps/gnomad_vars_annotated.bed .
 gsutil cp gs://imaps/intergenic_calibration_data.txt.gz .
 gsutil cp gs://imaps/demo_vars.bed .
-
 # from this repository:
 feature_intersection.sh
 
@@ -78,7 +77,9 @@ Rscript /path/to/imaps_calc.R /path/to/demo_vars.bed [allele format] /path/to/re
 # OR
 # use allele format "plus" and provide a five column .bed file  with reference and alternative alleles corresponding to the plus strand in the 5th "score" column, separated by "|" (e.g. "A|C").
 
-# ** CAUTION should be exercised when analyzing variants where the allele frequency spectrum may influence variant ascertainment or classification. As one example, significant GWAS and QTL variants generally have relatively high allele frequencies as these analyses are not typically powered to detect effects from lower freuency variants. Such sets of variants may not produce interpretable iMAPS results. **
+# ** CAUTION should be exercised when analyzing variants where the allele frequency spectrum may influence variant ascertainment or classification. **
+# ** As one example, significant GWAS and QTL variants generally have relatively high allele frequencies as these analyses are not typically powered to detect effects from lower freuency variants. **
+# ** Such sets of variants may not produce interpretable iMAPS results. **
 
 ```
 
