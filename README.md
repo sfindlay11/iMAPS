@@ -52,7 +52,7 @@ imaps.by_category.DATA.txt
 
 Rscript /path/to/imaps_calc.R /path/to/demo_vars.bed [allele format] /path/to/required_files/ 
 
-# allele fromat: "none", "sense", or "plus"; see below
+# allele fromat: "none", "sense", or "plus" (without quotes); see below
 
 # .bed format requirements:
 # tab-separated values
@@ -68,17 +68,17 @@ Rscript /path/to/imaps_calc.R /path/to/demo_vars.bed [allele format] /path/to/re
 # 5) score (optional; see below) = "reference_allele|alternative_allele"
 # 6) strand (optional; see below)
 
-
-# if providing features / genomic ranges of interest:
+# allele format options:
+# 1) if providing features / genomic ranges of interest:
 # use allele format "none" and provide a four column .bed file if genomic ranges are provided with no variant alleles
 
-# if providing variants:
-# use allele format "sense" and provide a six column .bed file with reference and alternative alleles corresponding to the sense strand in the 5th "score" column, separated by "|" (e.g. "A|C"). Provide the strand in column six.
+# 2) if providing variants:
+# a) use allele format "sense" and provide a six column .bed file with reference and alternative alleles corresponding to the sense strand in the 5th "score" column, separated by "|" (e.g. "A|C"). Provide the strand in column six.
 # OR
-# use allele format "plus" and provide a five column .bed file  with reference and alternative alleles corresponding to the plus strand in the 5th "score" column, separated by "|" (e.g. "A|C").
+# b) use allele format "plus" and provide a five column .bed file  with reference and alternative alleles corresponding to the plus strand in the 5th "score" column, separated by "|" (e.g. "A|C").
 
 # ** CAUTION should be exercised when analyzing variants where the allele frequency spectrum may influence variant ascertainment or classification. **
-# ** As one example, significant GWAS and QTL variants generally have relatively high allele frequencies as these analyses are not typically powered to detect effects from lower freuency variants. **
+# ** As one example, significant GWAS and QTL variants generally have relatively high allele frequencies as these analyses are not typically powered to detect effects from lower frequency variants. **
 # ** Such sets of variants may not produce interpretable iMAPS results. **
 
 ```
