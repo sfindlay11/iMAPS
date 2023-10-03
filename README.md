@@ -70,12 +70,12 @@ Rscript /path/to/imaps_calc.R /path/to/demo_vars.bed [allele format] /path/to/re
 
 # allele format options:
 # 1) if providing features / genomic ranges of interest:
-# use allele format "none" and provide a four column .bed file if genomic ranges are provided with no variant alleles
+# specify allele format "none" and provide a four column .bed file if genomic ranges are provided with no variant alleles
 
 # 2) if providing variants:
-# a) use allele format "sense" and provide a six column .bed file with reference and alternative alleles corresponding to the sense strand in the 5th "score" column, separated by "|" (e.g. "A|C"). Provide the strand in column six.
+# a) specify allele format "sense" and provide a six column .bed file with reference and alternative alleles corresponding to the sense strand in the 5th "score" column, separated by "|" (e.g. "A|C"). Provide the strand in column six.
 # OR
-# b) use allele format "plus" and provide a five column .bed file  with reference and alternative alleles corresponding to the plus strand in the 5th "score" column, separated by "|" (e.g. "A|C").
+# b) specify allele format "plus" and provide a five column .bed file  with reference and alternative alleles corresponding to the plus strand in the 5th "score" column, separated by "|" (e.g. "A|C").
 
 # ** CAUTION should be exercised when analyzing variants where the allele frequency spectrum may influence variant ascertainment or classification. **
 # ** As one example, significant GWAS and QTL variants generally have relatively high allele frequencies as these analyses are not typically powered to detect effects from lower frequency variants. **
