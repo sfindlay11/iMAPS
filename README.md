@@ -85,7 +85,9 @@ Rscript /path/to/imaps_calc.R /path/to/demo_vars.bed [allele format] /path/to/re
 
 ## ReP sites
 ReP sites identified using the "sequence plus structure" RBPamp affinity models are provided in eCLIP_peaks.hg38.IDR_pass.main_chr.prot_cod.ReP_sites.sel_RBPs.RBPamp_seq_struct.bed
+
 "name" column is underscore("_")-separated list of the eCLIP peak: RBP, cell line, chromStart, chromEnd, gene_id (separated by "|" when more than one), "top" gene region (CDS > UTR > intron), enrichment, -log10(P)
+
 "score" column is underscore("_")-separated list of relative RBPamp affinity (ideal binding site = 1) and relative position of the middle of the ReP site relative to the 5' end of the eCLIP peak (negaitve is ReP site upstream of 5' end of peak, positive is downstream)
 
 
